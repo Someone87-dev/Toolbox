@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -15,7 +16,7 @@ export default function ToolPageLayout({ title, description, children }: ToolPag
         <div className="flex items-center justify-between mb-2">
           <h1 className="text-3xl font-headline font-semibold text-foreground">{title}</h1>
           <Button variant="outline" asChild>
-            <Link href="/">
+            <Link href="/tools"> {/* Updated link to point to /tools */}
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Toolbox
             </Link>

@@ -46,11 +46,7 @@ export default function RootLayout({
             {children}
           </div>
           <Toaster />
-          <footer className="py-6 px-6 border-t border-border">
-            <div className="container mx-auto text-center text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Toolbox. Powered by Next.js and Firebase.
-            </div>
-          </footer>
+          {/* Footer copyright removed */}
         </ThemeProvider>
       </body>
     </html>
