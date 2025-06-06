@@ -1,5 +1,5 @@
 import { ToolCard } from '@/components/ToolCard';
-import { QrCode, Link2, Calculator, Scale, Coins, NotebookPen, ListChecks, KeyRound, Braces, Settings2, TextQuote, Columns, Palette } from 'lucide-react';
+import { QrCode, Link2, Calculator, Scale, Coins, NotebookPen, ListChecks, KeyRound, Braces, Settings2, TextQuote, Columns, Palette, CheckSquare } from 'lucide-react';
 
 const tools = [
   {
@@ -47,9 +47,16 @@ const tools = [
   {
     title: 'Grocery List',
     description: 'Manage your shopping list with items, quantities, and prices.',
-    href: '/todo-list', // Path remains /todo-list, content will change
-    icon: ListChecks,
+    href: '/todo-list', 
+    icon: ListChecks, // Keep ListChecks for Grocery List
     dataAiHint: 'task management shopping',
+  },
+  {
+    title: 'Classic To-Do List',
+    description: 'A simple and classic to-do list to manage your tasks.',
+    href: '/classic-todo-list',
+    icon: CheckSquare, // New icon for classic to-do
+    dataAiHint: 'task organization',
   },
   {
     title: 'Password Generator',
@@ -79,27 +86,28 @@ const tools = [
     icon: Columns,
     dataAiHint: 'text comparison',
   },
-  // Example of a new tool - can be expanded later
-  // {
-  //   title: 'Color Picker',
-  //   description: 'Select and preview colors, get HEX, RGB, HSL values.',
-  //   href: '/color-picker', // Would need a new page
-  //   icon: Palette,
-  //   dataAiHint: 'design utility',
-  // },
+  {
+    title: 'Color Picker',
+    description: 'Select colors and get HEX, RGB, HSL values.',
+    href: '/color-picker',
+    icon: Palette,
+    dataAiHint: 'design utility',
+  },
 ];
 
 export default function HomePage() {
   return (
-    <div>
-      <section className="text-center mb-12">
-        <h1 className="text-4xl font-headline font-bold mb-3">Welcome to Your Digital Toolbox</h1>
-        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          A comprehensive suite of utility tools designed to simplify your daily tasks. Fast, reliable, and easy to use.
+    <div className="py-8">
+      <section className="text-center mb-16">
+        <h1 className="text-5xl font-headline font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary/70 animate-pulse">
+          Welcome to Your Ultimate Digital Toolbox
+        </h1>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          Discover a comprehensive suite of powerful and easy-to-use utility tools designed to streamline your digital tasks. From developers to everyday users, Toolbox provides the essentials you need in one convenient place.
         </p>
       </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
         {tools.map((tool) => (
           <ToolCard
             key={tool.title}
@@ -112,27 +120,40 @@ export default function HomePage() {
         ))}
       </div>
 
-      <section className="mt-16 p-8 bg-card rounded-lg shadow-xl border border-border">
-        <div className="flex items-center mb-6">
-          <Settings2 className="w-10 h-10 text-primary mr-4" />
-          <h2 className="text-3xl font-headline font-semibold">Why Toolbox?</h2>
+      <section className="mt-20 p-10 bg-card rounded-xl shadow-2xl border border-border/50">
+        <div className="flex flex-col md:flex-row items-center mb-8">
+          <Settings2 className="w-16 h-16 text-primary mr-6 mb-4 md:mb-0 animate-spin [animation-duration:10s]" />
+          <div>
+            <h2 className="text-4xl font-headline font-bold mb-3">Why Choose Toolbox?</h2>
+            <p className="text-lg text-muted-foreground">
+              Our mission is to provide you with a versatile and reliable set of tools that are both powerful and intuitive.
+            </p>
+          </div>
         </div>
-        <div className="grid md:grid-cols-2 gap-6 text-muted-foreground">
+        <div className="grid md:grid-cols-2 gap-x-8 gap-y-6 text-muted-foreground text-base">
           <div>
-            <h3 className="font-semibold text-lg text-foreground mb-2">Streamlined Efficiency</h3>
-            <p>Access a wide range of common utilities in one place, saving you time and effort from switching between different apps or websites.</p>
+            <h3 className="font-semibold text-xl text-foreground mb-2">All-In-One Convenience</h3>
+            <p>Access a diverse range of essential utilities without juggling multiple apps or websites. Everything you need, right at your fingertips.</p>
           </div>
           <div>
-            <h3 className="font-semibold text-lg text-foreground mb-2">User-Friendly Design</h3>
-            <p>Each tool is crafted with simplicity and ease-of-use in mind, ensuring a smooth experience even for complex tasks.</p>
+            <h3 className="font-semibold text-xl text-foreground mb-2">Intuitive & User-Friendly</h3>
+            <p>Each tool is meticulously designed for simplicity and ease of use, ensuring a seamless and productive experience for all users, regardless of technical skill.</p>
           </div>
           <div>
-            <h3 className="font-semibold text-lg text-foreground mb-2">Privacy Focused</h3>
-            <p>Many tools operate entirely within your browser, meaning your data stays with you. For tools requiring interaction, we're transparent about how data is handled.</p>
+            <h3 className="font-semibold text-xl text-foreground mb-2">Fast & Reliable Performance</h3>
+            <p>Built with modern web technologies, Toolbox is optimized for speed and reliability, ensuring your tasks are completed efficiently without unnecessary delays.</p>
           </div>
           <div>
-            <h3 className="font-semibold text-lg text-foreground mb-2">Constantly Evolving</h3>
-            <p>We're committed to improving existing tools and adding new ones based on user needs and technological advancements.</p>
+            <h3 className="font-semibold text-xl text-foreground mb-2">Privacy First Approach</h3>
+            <p>Most tools operate entirely within your browser, ensuring your data remains private and secure. We are transparent about data handling for any tool that might require it.</p>
+          </div>
+           <div>
+            <h3 className="font-semibold text-xl text-foreground mb-2">Modern & Adaptable Design</h3>
+            <p>Enjoy a clean, modern interface with support for both light and dark themes. Our responsive design ensures a great experience across all your devices.</p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-xl text-foreground mb-2">Continuously Improving</h3>
+            <p>We are dedicated to enhancing existing tools and introducing new, innovative utilities based on user feedback and emerging needs. Your perfect toolkit, always evolving.</p>
           </div>
         </div>
       </section>
