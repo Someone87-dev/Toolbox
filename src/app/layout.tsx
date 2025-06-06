@@ -5,8 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { LogoIcon } from '@/components/icons/LogoIcon';
 
 export const metadata: Metadata = {
-  title: 'ToolboxAI - Your Ultimate Utility Toolkit',
-  description: 'A collection of powerful AI-driven and standard utility tools including Text Diff, Text Summarizer, Case Converter, and Unit Converter.',
+  title: 'Toolbox - Your Ultimate Utility Toolkit',
+  description: 'A collection of powerful utility tools including QR Code Generator, URL Shortener, Calculators, Converters, and more.',
 };
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
             <Link href="/" className="flex items-center gap-2 group">
               <LogoIcon className="h-8 w-8 text-primary group-hover:text-primary/90 transition-colors" />
               <span className="text-2xl font-headline font-bold text-foreground group-hover:text-foreground/90 transition-colors">
-                ToolboxAI
+                Toolbox
               </span>
             </Link>
             {/* Navigation items can be added here if needed */}
@@ -39,7 +39,7 @@ export default function RootLayout({
         <Toaster />
         <footer className="py-6 px-6 border-t border-border">
           <div className="container mx-auto text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} ToolboxAI. Powered by Next.js and Firebase.
+            © {new Date().getFullYear()} Toolbox. Powered by Next.js and Firebase.
           </div>
         </footer>
       </body>

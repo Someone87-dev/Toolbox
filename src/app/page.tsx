@@ -1,27 +1,27 @@
 import { ToolCard } from '@/components/ToolCard';
-import { GitCompareArrows, Newspaper, CaseSensitive, Scale, Settings2 } from 'lucide-react';
+import { QrCode, Link2, Calculator, Scale, Coins, NotebookPen, ListChecks, KeyRound, Braces, Settings2 } from 'lucide-react';
 
 const tools = [
   {
-    title: 'Text Diff Checker',
-    description: 'Compare two pieces of text and highlight their differences.',
-    href: '/text-diff',
-    icon: GitCompareArrows,
-    dataAiHint: 'text comparison',
+    title: 'QR Code Generator & Reader',
+    description: 'Easily generate and read QR codes for various purposes.',
+    href: '/qr-code',
+    icon: QrCode,
+    dataAiHint: 'qr utility',
   },
   {
-    title: 'Text Summarizer (AI)',
-    description: 'Summarize long texts into concise key points using AI.',
-    href: '/text-summarizer',
-    icon: Newspaper,
-    dataAiHint: 'document summary',
+    title: 'URL Shortener',
+    description: 'Create short, manageable links from long URLs.',
+    href: '/url-shortener',
+    icon: Link2,
+    dataAiHint: 'link management',
   },
   {
-    title: 'Case Converter',
-    description: 'Convert text between uppercase, lowercase, title case, etc.',
-    href: '/case-converter',
-    icon: CaseSensitive,
-    dataAiHint: 'typography tools',
+    title: 'Advanced Calculator',
+    description: 'Perform complex calculations with an advanced interface.',
+    href: '/calculator',
+    icon: Calculator,
+    dataAiHint: 'math computation',
   },
   {
     title: 'Unit Converter',
@@ -30,15 +30,50 @@ const tools = [
     icon: Scale,
     dataAiHint: 'measurement conversion',
   },
+  {
+    title: 'Currency Converter',
+    description: 'Get real-time exchange rates and convert currencies.',
+    href: '/currency-converter',
+    icon: Coins,
+    dataAiHint: 'finance exchange',
+  },
+  {
+    title: 'Quick Notes',
+    description: 'Jot down and save quick notes or snippets of text.',
+    href: '/quick-notes',
+    icon: NotebookPen,
+    dataAiHint: 'text editor',
+  },
+  {
+    title: 'To-Do List',
+    description: 'Organize your tasks with a simple and effective to-do list.',
+    href: '/todo-list',
+    icon: ListChecks,
+    dataAiHint: 'task management',
+  },
+  {
+    title: 'Password Generator',
+    description: 'Create strong, random passwords for your accounts.',
+    href: '/password-generator',
+    icon: KeyRound,
+    dataAiHint: 'security utility',
+  },
+  {
+    title: 'JSON Formatter',
+    description: 'Format, validate, and beautify JSON data.',
+    href: '/json-formatter',
+    icon: Braces,
+    dataAiHint: 'developer tools',
+  },
 ];
 
 export default function HomePage() {
   return (
     <div>
       <section className="text-center mb-12">
-        <h1 className="text-4xl font-headline font-bold mb-3">Welcome to ToolboxAI</h1>
+        <h1 className="text-4xl font-headline font-bold mb-3">Welcome to Toolbox</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Your one-stop solution for a variety of utility tools, enhanced with AI capabilities. Select a tool below to get started.
+          Your one-stop solution for a variety of utility tools. Select a tool below to get started.
         </p>
       </section>
 
@@ -60,8 +95,7 @@ export default function HomePage() {
             <h2 className="text-2xl font-headline font-semibold">How It Works</h2>
           </div>
           <p className="text-muted-foreground mb-4">
-            ToolboxAI provides a suite of easy-to-use utilities. Simply select a tool, input your data, and get instant results.
-            Our AI-powered tools, like the Text Summarizer, leverage advanced models to provide intelligent assistance.
+            Toolbox provides a suite of easy-to-use utilities. Simply select a tool, input your data or use its features, and get instant results.
           </p>
           <p className="text-muted-foreground">
             We are constantly working on adding new tools and features. Stay tuned!
