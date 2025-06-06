@@ -8,10 +8,17 @@ export default {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: { // Added container default settings
+      center: true,
+      padding: "1rem", // Default padding for containers
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       fontFamily: {
         body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        headline: ['Inter', 'sans-serif'], // Ensuring Inter is used for headlines as well
         code: ['monospace'],
       },
       colors: {
@@ -93,7 +100,43 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      typography: (theme: (path: string) => string) => ({ // Added prose styles for markdown/html content
+        DEFAULT: {
+          css: {
+            color: theme('colors.foreground'),
+            a: {
+              color: theme('colors.primary.DEFAULT'),
+              '&:hover': {
+                color: theme('colors.primary.DEFAULT'),
+                opacity: 0.8,
+              },
+            },
+            strong: {
+              color: theme('colors.foreground'),
+            },
+            // ... other prose styles if needed
+          },
+        },
+        invert: { // For dark mode if prose is used on dark backgrounds
+           css: {
+            color: theme('colors.foreground'),
+             a: {
+              color: theme('colors.primary.DEFAULT'), // Use light primary for dark mode links
+              '&:hover': {
+                color: theme('colors.primary.DEFAULT'),
+                opacity: 0.8,
+              },
+            },
+            strong: {
+              color: theme('colors.foreground'),
+            },
+          }
+        }
+      }),
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('@tailwindcss/typography'), // Added typography plugin
+  ],
 } satisfies Config;
